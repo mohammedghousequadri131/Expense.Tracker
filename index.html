@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Tracker</h1>
+        </header>
+
+        <main>
+            <div class="summary-cards">
+                <div class="card">
+                    <h2>Income</h2>
+                    <p id="income" contenteditable="true">₹0.00</p>
+                </div>
+                <div class="card">
+                    <h2>Expense</h2>
+                    <p id="expense">₹0.00</p>
+                </div>
+                <div class="card">
+                    <h2>Balance</h2>
+                    <p id="balance">₹0.00</p>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <div class="left-column">
+                    <div class="card budget-limits">
+                        <h2>Budget Limits</h2>
+                        <form id="budget-limits-form">
+                            <!-- Budget limits will be populated by JS -->
+                            <button type="submit">Update Limits</button>
+                        </form>
+                    </div>
+
+                    <div class="card notification-card">
+                        <h2>Notifications</h2>
+                        <div id="notification-text">
+                            <!-- Notifications will appear here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="card add-transaction">
+                        <h2>Add New Transaction</h2>
+                        <form id="transaction-form">
+                            <input type="text" id="description" placeholder="Description" required>
+                            <input type="date" id="date" required>
+                            <select id="category" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="Food">Food</option>
+                                <option value="Travel">Travel</option>
+                                <option value="Rent">Rent</option>
+                                <option value="College Fee">College Fee</option>
+                                <option value="Shopping">Shopping</option>
+                            </select>
+                            <input type="number" id="amount" placeholder="Amount" step="0.01" required>
+                            <button type="submit">Add Transaction</button>
+                        </form>
+                    </div>
+
+                    <div class="card transaction-table-card">
+                        <h2>Transactions</h2>
+                        <table class="transaction-table">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Amount</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transaction-list">
+                                <!-- Transactions will be populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
